@@ -1,0 +1,28 @@
+Going back over (for our purposes)
+
+HTML - the Content of the page
+- this is the actual information that you want displayed on the page
+
+CSS - Style
+- This is HOW the content is displayed.
+- It also contains some “content” like borders, but this is usually still dependent on what the content is
+
+JS - how you can dynamically change both the content and the css
+- JS serves other functions, but we aren’t going to worry about that today
+
+
+example of basic javascript function that changes text
+
+JQUERY - shortened JS
+- does the same thing as JS but it’s quicker to write
+
+
+Basic Jquery effects - Hide and Show
+
+HIDE
+
+Hide and show are very easy Jquery functions to learn. They take whichever element you select and either
+hide it or show it. If an element is already hidden, .hide() will not hide it and the same goes for .show()
+if the element is already shown.
+
+.toggle() can be used to change between hiding and showing depending on whichever the element currently is.

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript Example</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <style>
+        #hidden{
+          display: none;
+        }
+        body{
+          font-size: 30px;
+          padding-top: 40px;
+          background-color: #EEF3E2;
+          padding-left: 20%;
+        }
+        </style>
+    </head>
+    <body>
+
+      <div class="buttons">
+        <button onclick="toggle();">Toggle Hide or Show</button>
+        <button onclick="hideText();">Hide</button>
+        <button onclick="showText();">Show</button>
+      </div>
+
+      <div id="hidden">
+        <p>Here is text I'd like to Hide and Show!</p>
+        <a href="/Users/marcsalo/Documents/BeersDebuggers/Soft Open/Animations.html">Moving Forward</a>
+      </div>
+
+
+
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+    function hideText(){
+      $('#hidden').hide();
+    };
+
+    function toggle() {
+      $('#hidden').toggle();
+    };
+
+    function showText(){
+      $('#hidden').show();
+    };
+    </script>
+
+
+</html>
