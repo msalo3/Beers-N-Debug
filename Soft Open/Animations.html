@@ -6,45 +6,85 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   <style>
-  #myContainer {
-    width: 400px;
-    height: 400px;
+  .movable{
     position: relative;
-    background: yellow;
   }
-  #myAnimation {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    background-color: red;
+  .header{
+    text-align: center;
   }
+  body{
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+  }
+  button{
+    color: blue;
+  }
+  #hidden{
+    display: none;
+  }
+
   </style>
   <body>
-    <p>
-    <button onclick="myMove()">Click Me</button>
-    </p>
+    <div class="header">
+      <p>The Jquery animate syntax:</p>
+      <p>(selector).animate({styles},speed,easing,callback)</p>
+      <button id="showButton">Click Me!</button>
+    </div>
+    <br>
+    <div id="hidden">
+      <button id="singleMovement">Single Movement</button>
+      <p class="movable" id="moveText">I'm text that feels like moving left!</p>
 
-    <div id ="myContainer">
-    <div id ="myAnimation"></div>
+      <button id="multipleProps">Alter multiple properties</button>
+      <p class="movable" id="changeText">I want to move, lighten, and space further apart!!!</p>
+
+
+      <button id="animateButton">Animate</button>
+      <p class="movable" id="crazyText">I'm text that feels like moving a lot!!</p>
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
   <script>
-  function myMove() {
-    var elem = document.getElementById("myAnimation");
-    var pos = 0;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (pos == 350) {
-        clearInterval(id);
-      } else {
-        pos++;
-        elem.style.top = pos + 'px';
-        elem.style.left = pos + 'px';
+  // Single property altered
+  $('#singleMovement').click(function() {
+    $('#moveText').animate({left: '250px'});
+  });
+
+  // Multiple properties altered at once!
+  $('#multipleProps').click(function() {
+    $('#changeText').animate({
+      top: '250px',
+      opacity: '0.5',
+      letterSpacing: '+=10px'
+    });
+  });
+
+
+// Queue functionality
+  $('#animateButton').click(function(){
+    var theText = $('#crazyText');
+    runThisNumberOfTimes = 4;
+    beginAnimation();
+
+    function beginAnimation(){
+      theText.animate({left: '+=250px'});
+      theText.animate({top: '+=250px'});
+      theText.animate({left: '-=500px'});
+      theText.animate({top: '-=250px'});
+      theText.animate({left: '+=250px'});
+      runThisNumberOfTimes--;
+      if(runThisNumberOfTimes>0){
+        beginAnimation();
       }
     }
-  }
+  });
+
+  $('#showButton').click(function() {
+    $('#hidden').show(1000);
+    $('#showButton').hide();
+  });
   </script>
 </html>

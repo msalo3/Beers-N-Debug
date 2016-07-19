@@ -26,3 +26,23 @@ hide it or show it. If an element is already hidden, .hide() will not hide it an
 if the element is already shown.
 
 .toggle() can be used to change between hiding and showing depending on whichever the element currently is.
+
+
+Animation
+  - Alter an HTML element's CSS properties
+  - Altering multiple properties at once
+  - Make a queue of multiple properties that will go off one after another
+  - Using recursion to continually animate an element
+
+
+  Need to talk about
+  - events (onclick, on hover, etc)
+  - speed of animation
+  - easing
+  - callback
+  - delay() and/or setinterval()
+
+  REMEMBER!
+  - Set the position to relative or absolute or else many effects will not work
+  - CSS styles like min-height are written as minHeight 
+  -

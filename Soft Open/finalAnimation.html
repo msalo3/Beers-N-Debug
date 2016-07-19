@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript Example</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <style>
+        body{
+          font-size: 25px;
+          background-color: #EEF3E2;
+        }
+        img{
+          max-width: 80%;
+          max-height: 80%;
+        }
+        .text{
+          margin-top: 40px;
+        }
+        .bubble
+        {
+          text-align: center;
+          position: relative;
+          width: 235px;
+          height: 300px;
+          padding: 0px;
+          background: #FFFFFF;
+          -webkit-border-radius: 15px;
+          -moz-border-radius: 15px;
+          border-radius: 15px;
+          border: #7F7F7F solid 2px;
+        }
+
+        .bubble:after
+        {
+          content: '';
+          position: absolute;
+          border-style: solid;
+          border-width: 8px 0 8px 21px;
+          border-color: transparent #FFFFFF;
+          display: block;
+          width: 0;
+          z-index: 1;
+          right: -21px;
+          top: 266px;
+        }
+
+        .bubble:before
+        {
+          content: '';
+          position: absolute;
+          border-style: solid;
+          border-width: 9px 0 9px 22px;
+          border-color: transparent #7F7F7F;
+          display: block;
+          width: 0;
+          z-index: 0;
+          right: -24px;
+          top: 265px;
+        }
+        .wizard{
+          position: relative;
+        }
+        .maiden{
+          display: none;
+          opacity: 0;
+        }
+        #kermit{
+          display: none;
+        }
+        #frog{
+          display: none;
+        }
+        .lightning{
+          display: none;
+          position: absolute;
+          left: 160px;
+          top: -50px;
+          z-index: 101;
+          overflow: visible;
+        }
+        #magicBtn{
+          display: none;
+        }
+        #wizBtn{
+          display: none;
+        }
+        #first{
+          display: none;
+        }
+        #second{
+          display: none;
+        }
+        #third{
+          display: none;
+        }
+        #fourth{
+          display: none;
+        }
+        #fifth{
+          display: none;
+        }
+        .container{
+          padding: 10px;
+        }
+        .head{
+          text-align: center;
+          min-height: 80px;
+          font-size: 40px;
+        }
+        </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-8">
+            <h2 class="head">Animation!</h2>
+          </div>
+          <div class="col-xs-2"></div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5">
+            <div class="maiden">
+              <img src="./images/ironMaiden.png">
+            </div>
+            <div id="kermit">
+              <img src="./images/kermit.png">
+            </div>
+            <div id="frog">
+              <img src="./images/frog.png">
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <div class="text bubble" id="first">
+              <p>I am magic Gary and I will turn this frog into a maiden!!</p>
+            </div>
+            <div class="text bubble" id="second">
+              <p>The frog to my left!!</p>
+            </div>
+            <div class="text bubble" id="third">
+              <p>Hey!<br><br>You get out of here Kermit!!</p>
+              <p class="instructions">(Click on Kermit to kick him out!)</p>
+            </div>
+            <div class="text bubble" id="fourth">
+              <p>What?! The magic tome I read said this spell turns a frog into a maiden!</p>
+              <p>It didn't say</p>
+            </div>
+          </div>
+          <div class="col-xs-5">
+            <img id="magicGary" class="wizard" src="./images/Wizard.png">
+            <img class="lightning" src="./images/lightning.png">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-6"></div>
+          <div class="col-xs-2">
+            <button id="wizBtn">What frog?</button>
+            <button id="magicBtn">Click for magic...</button>
+          </div>
+          <div class="col-xs-2"></div>
+        </div>
+      </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="./JqueryRotate.js"></script>
+    <script>
+    $('#magicGary').on('mouseover',function() {
+      $('#first').show();
+      $('#wizBtn').show(1000);
+      $('#magicGary').unbind();
+    });
+
+    $('#wizBtn').click(function(){
+      $('#first').hide();
+      $('#second').show();
+      setTimeout(function(){
+        $('#kermit').show(700, function() {
+          $('#wizBtn').hide();
+          $('#second').hide();
+          $('#third').show();
+        });
+      }, 1000);
+    });
+
+    $("#kermit").rotate({bind:{
+      click: function(){
+        $('#third').hide(0);
+        $('#frog').show(4000);
+        $('#magicBtn').show(4000);
+        var k = $(this);
+        $(this).rotate({
+          angle: 0,
+          animateTo:360
+        });
+        k.animate({opacity: '0.8'});
+        k.animate({opacity: '0.5'});
+        k.animate({opacity: '0.3'});
+        k.animate({opacity: '0'});
+      }
+      }});
+
+
+
+      $('#magicBtn').click(function(){
+        $('#kermit').hide();
+        $('.lightning').show(100);
+        $('.lightning').animate({left: '-=800px'}, 2000, function(){
+          $('#magicBtn').hide();
+          $('#wizBtn').hide();
+          $('.lightning').hide(0, function(){
+            frogFlicker();
+          });
+        });
+      });
+
+      function frogFlicker() {
+        var frog = $('#frog');
+        frog.animate({opacity: '0.9', height: '+=100px', width: '-=100px'}, 2000);
+        frog.animate({opacity: '0.7', height: '+=100px', width: '-=100px'}, 2000);
+        frog.animate({opacity: '0.5', height: '+=100px', width: '-=100px'}, 2000);
+        frog.animate({opacity: '0.3', height: '+=100px', width: '-=100px'}, 2000);
+        frog.animate({opacity: '0.2', height: '+=100px', width: '-=100px'}, 2000);
+        frog.animate({opacity: '0', minHeight: '-=50px'}, 2000, function() {
+          changeToMaiden();
+        });
+      }
+
+
+      function changeToMaiden() {
+        $('#frog').hide();
+        $('.maiden').animate({opacity: '0'});
+        $('.maiden').show();
+        var magic = $('.maiden');
+        magic.animate({opacity: '0.2'}, 700);
+        magic.animate({opacity: '0.4'}, 700);
+        magic.animate({opacity: '0.6'}, 700);
+        magic.animate({opacity: '0.8'}, 700);
+        magic.animate({opacity: '1'}, 700, function() {
+          $('#fourth').show(function(){
+            setTimeout(function(){
+              $('#fourth').hide();
+              $('.head').html('<h2>Iron Maiden!!!!</h2>');
+            }, 2400);
+          });
+        });
+      }
+    </script>
+
+
+
+</html>
