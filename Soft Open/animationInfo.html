@@ -5,9 +5,110 @@
         <title>Javascript Example</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <style>
+        body{
+          padding-top: 10px;
+
+          background-color: #EEF3E2;
+        }
+        p{
+          text-align: center;
+          font-size: 30px;
+          padding-bottom: 40px;
+        }
+        h3{
+          padding-top: 20px;
+          color: #005A31;
+          text-align: center;
+          font-size: 40px;
+        }
+        </style>
     </head>
     <body>
+      <h3>Events</h3>
+      <p>
+        There are many different events that can be handled by JQuery.<br>
+        Some of the more basic and easy ones to use are:<br>
+        <u>.click</u>, <u>.on</u>, <u>.hover</u>, <u>.mouseenter</u>, etc
+      </p>
 
+      <h3>Speed</h3>
+      <p>
+        Animation speed is measured in milliseconds.<br>
+        The larger the number, the longer the animation will take.<br>
+        <br>
+        You can also use the keywords <u>'slow'</u>, <u>'normal'</u>, and <u>'fast'</u>,<br>
+        which are 600, 400, and 200 milliseconds respectively.
+        <br>
+      </p>
+
+      <h3>Easing</h3>
+      <p>
+        This is how the animation will look.<br>
+        For example, if I have text moving 200 px to the left,<br>
+        I can have an easing that makes it move 90% of the way very quickly <br>
+        and then move slowly for the last 10%.
+        <br>
+        <br>
+        There are only 2 easings in the JQuery library: <u>linear</u> and <u>swing</u><br>
+        - swing is slightly faster at the beginning and end<br>
+        - linear is constant throughout<br>
+        There are many more easings that you can use in other libraries online.
+        <br>
+      </p>
+
+      <h3>Callback</h3>
+      <p>
+        Callback is where you can tell JQuery to run another function once the current function is finished.<br>
+        You can write a function beforehand and call it <br>
+        or you can make an anonymous function and write the code in the first function
+        <br>
+      </p>
+
+      <h3>setTimeout</h3>
+      <p>
+        This acts as a delay function.<br>
+        It takes in a function and a number of milliseconds as parameters. <br>
+        It waits the number of milliseconds and then runs the function.
+        <br>
+      </p>
+
+      <h3>Position</h3>
+      <p>
+        Set the position to relative or absolute or else many effects will not work.<br>
+        <br>
+        <u>Position-relative</u>:
+        <br>Can move the element from where it would originally have been
+        located.
+        <br>This means it will still take up that space on the page.
+        <br>
+        <br>
+        <u>Position-absolute</u>:
+        <br>This element will be positioned in relation to it's nearest
+        ancestor on the page.
+        <br>
+      </p>
+
+      <h3>CSS differences</h3>
+      <p>
+        CSS styles like min-height are written as minHeight.<br>
+        Every quantity that is given to a CSS style is in the form of a string.<br>
+          ie - left: '20px'
+        <br>
+      </p>
+
+      <h3></h3>
+      <p>
+      </p>
+
+      <h3></h3>
+      <p>
+      </p>
+
+      <h3></h3>
+      <p>
+      </p>
 
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
