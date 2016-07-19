@@ -7,12 +7,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
         <style>
         .nav{
-          margin: 50px;
-          padding-left: 12%;
         }
         body{
+          text-align: center;
           padding-top: 10%;
-          padding-left: 30%;
           font-size: 30px;
           background-color: #EEF3E2;
         }
@@ -24,7 +22,12 @@
         <p id="textChange">Here is some text I'd like to change</p>
         <button onclick="changeText();">Click here to change the text above!</button>
       </div>
-
+      <p id="unseen" style="text-align: left; padding-left: 30%; display: none;">
+        <br>
+        function changeText() {<br>
+          document.getElementById('textChange').innerHTML = 'The text changed!!';<br>
+        };
+      </p>
       <div class="nav">
         <a href="file:///Users/marcsalo/Documents/BeersDebuggers/Soft%20Open/JqueryExample.html">Onto JQuery</a>
       </div>
@@ -36,6 +39,7 @@
     <script>
     function changeText() {
       document.getElementById('textChange').innerHTML = 'The text changed!!';
+      $('#unseen').show();
     };
 
     </script>

@@ -13,6 +13,7 @@
     text-align: center;
   }
   body{
+    background-color: #EEF3E2;
     font-size: 24px;
     padding: 20px;
     text-align: center;
@@ -21,6 +22,9 @@
     color: blue;
   }
   #hidden{
+    display: none;
+  }
+  #finalLink{
     display: none;
   }
 
@@ -43,6 +47,7 @@
       <button id="animateButton">Animate</button>
       <p class="movable" id="crazyText">I'm text that feels like moving a lot!!</p>
     </div>
+    <a id="finalLink" href="/Users/marcsalo/Documents/BeersDebuggers/Soft Open/finalAnimation.html">Finale</a>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -62,11 +67,10 @@
     });
   });
 
-
+var runThisNumberOfTimes = 4;
 // Queue functionality
   $('#animateButton').click(function(){
     var theText = $('#crazyText');
-    runThisNumberOfTimes = 4;
     beginAnimation();
 
     function beginAnimation(){
@@ -78,6 +82,9 @@
       runThisNumberOfTimes--;
       if(runThisNumberOfTimes>0){
         beginAnimation();
+      }
+      else{
+        $('#finalLink').show(10000);
       }
     }
   });

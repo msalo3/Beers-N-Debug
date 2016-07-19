@@ -33,7 +33,7 @@
         </p>
       </div>
 
-      <div class="hiddenWord">SHOW!!</div>
+      <div class="hiddenWord" id="invisible">SHOW!!</div>
 
       <div class="btns">
         <button onclick="hideText();">Surprise #1</button>
@@ -49,12 +49,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script>
+    //JQuery and speed
     function hideText(){
       $('.garbledNonsense').hide(2000);
     };
 
+
+    // Callback function shown
     function showText(){
-      $('.hiddenWord').show(1000,function(){
+      $('#invisible').show(1000,function(){
         $('#onward').show();
       });
     };

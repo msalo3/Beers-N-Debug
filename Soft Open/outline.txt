@@ -17,13 +17,13 @@ JQUERY - shortened JS
 - does the same thing as JS but it’s quicker to write
 
 
-Basic Jquery effects - Hide and Show
+Basic JQuery effects - Hide and Show
 
 HIDE
 
-Hide and show are very easy Jquery functions to learn. They take whichever element you select and either
-hide it or show it. If an element is already hidden, .hide() will not hide it and the same goes for .show()
-if the element is already shown.
+Hide and show are very easy JQuery functions to learn. They take whichever element
+you select and either hide it or show it. If an element is already hidden, .hide()
+will not hide it and the same goes for .show() if the element is already shown.
 
 .toggle() can be used to change between hiding and showing depending on whichever the element currently is.
 
@@ -36,13 +36,41 @@ Animation
 
 
   Need to talk about
-  - events (onclick, on hover, etc)
-  - speed of animation
-  - easing
-  - callback
-  - delay() and/or setinterval()
+  - Events (onclick, on hover, etc)
+    There are many different events that can be handled by JQuery. Some of the more
+    basic and easy ones to use are: .click, .on, .hover, .mouseenter, etc
 
-  REMEMBER!
-  - Set the position to relative or absolute or else many effects will not work
-  - CSS styles like min-height are written as minHeight 
-  -
+  - Speed
+    Animation speed is measured in milliseconds. The larger the number, the longer
+    the animation will take. You can also use the keywords 'slow', 'normal', and
+    'fast', which are 600, 400, and 200 respectively
+
+  - Easing
+    This is how the animation looks. For example, if I have text moving 200 px to
+    the left, I can have an easing that makes it move 90% of the way very quickly
+    and then move slowly for the last 10%.
+    There are only 2 easings in the JQuery library: linear and swing
+      - swing is slightly faster at the beginning and end
+      - linear is constant throughout
+    There are many more easings that you can use in other libraries online.
+
+  - Callback
+    Callback is where you can tell JQuery to run another function once the current
+    function is finished. You can write a function beforehand and call it or you can
+    make an anonymous function and write the code in the first function
+
+  - setTimeout()
+    This acts as a delay function. It takes in a function and a number of milliseconds
+    as parameters. It waits the number of milliseconds and then runs the function.
+
+  - Position
+    Set the position to relative or absolute or else many effects will not work
+    Position-relative: Can move the element from where it would originally have been
+    located. This means it will still take up that space on the page.
+    Position-absolute: This element will be positioned in relation to it's nearest
+    ancestor on the page.
+
+  - CSS differences
+    CSS styles like min-height are written as minHeight .
+    Every quantity that is given to a CSS style is in the form of a string.
+      ie - left: '20px'

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript Example</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <style>
+        .nav{
+          margin: 50px;
+        }
+        body{
+          padding-top: 10%;
+          font-size: 30px;
+          text-align: center;
+          background-color: #EEF3E2;
+        }
+        #html{
+          padding-bottom: 20px;
+          display: none;
+        }
+        #css{
+          padding-bottom: 20px;
+          display: none;
+        }
+        #javascript{
+          padding-bottom: 20px;
+          display: none;
+        }
+        h2{
+          font-size: 40px;
+          padding-bottom: 30px;
+        }
+
+        </style>
+    </head>
+    <body>
+      <h2>HTML, CSS, Javascript</h2>
+      <p id="html">
+        HTML is the content of your page.<br>
+        It is made up of all of the actual information you want to be displayed.
+      </p>
+      <p id="css">
+        CSS is the styling of your page.<br>
+        It makes the content (or HTML) look a certain way.<br>
+        Most of the pages I make have relevant information on them, but don't look
+        very pretty.
+      </p>
+      <p id="javascript">
+        Javascript is the worker and mover of your page.<br>
+        It is a client side language which can make your website more <br>
+        dynamic by changing the HTML or CSS of your page without having to talk to the server.
+      </p>
+      <button id="htmlBtn">HTML</button>
+      <button id="cssBtn">CSS</button>
+      <button id="javascriptBtn">JS</button>
+      <div class="nav">
+        <a href="/Users/marcsalo/Documents/BeersDebuggers/Soft Open/JavascriptExample.html">Continue</a>
+      </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+    <script>
+    $('#htmlBtn').click(function() {
+      $('#html').show();
+      $('#css').hide();
+      $('#javascript').hide();
+    });
+
+    $('#cssBtn').click(function() {
+      $('#css').show();
+      $('#html').hide();
+      $('#javascript').hide();
+    });
+
+    $('#javascriptBtn').click(function() {
+      $('#javascript').show();
+      $('#css').hide();
+      $('#html').hide();
+    });
+    </script>
+</html>
